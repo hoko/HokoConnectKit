@@ -1,0 +1,10 @@
+framework module HokoConnectKit {
+  umbrella header "HokoConnectKit.h"
+
+  export *
+  module * { export * }
+}
+
+module HokoConnectKit.Swift {
+    header "HokoConnectKit-Swift.h"
+}
