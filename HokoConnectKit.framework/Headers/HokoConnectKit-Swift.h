@@ -102,9 +102,6 @@ typedef int swift_int4  __attribute__((__ext_vector_type__(4)));
 
 SWIFT_CLASS("_TtC14HokoConnectKit13ConnectButton")
 @interface ConnectButton : UIButton
-@property (nonatomic, readonly) UIBlurEffectStyle menuStyle;
-@property (nonatomic, readonly, copy) NSString * __nullable code;
-@property (nonatomic, readonly) BOOL fullyLoaded;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * __nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 @end
@@ -143,6 +140,10 @@ SWIFT_CLASS("_TtC14HokoConnectKit13ConnectButton")
 @end
 
 
+@interface NSNumber (SWIFT_EXTENSION(HokoConnectKit))
+@end
+
+
 @interface NSURL (SWIFT_EXTENSION(HokoConnectKit))
 @end
 
@@ -160,6 +161,10 @@ SWIFT_CLASS("_TtC14HokoConnectKit13ConnectButton")
 
 
 @interface NSURLSession (SWIFT_EXTENSION(HokoConnectKit))
+@end
+
+
+@interface UIColor (SWIFT_EXTENSION(HokoConnectKit))
 @end
 
 

@@ -6,27 +6,51 @@
 	<dict>
 		<key>Assets.car</key>
 		<data>
-		bPQazwsaRzaEgnxeWf++XSQwgI4=
+		UCMXGStPKXrOnRxDuCFA50NGSsc=
 		</data>
 		<key>Headers/HokoConnectKit-Swift.h</key>
 		<data>
-		Eum7Xy3qy7qp3/gfbTzFzEvUaqY=
+		bLChLo5FOylwOBSSc1MCNKNyCps=
 		</data>
 		<key>Headers/HokoConnectKit.h</key>
 		<data>
-		1YatnDE5WNXqG42x0QzmSoAfhT0=
+		il/68Nv4c8peyI61Y2wAQF7vFmI=
+		</data>
+		<key>Info-OSX.plist</key>
+		<data>
+		yQQVAEDVKvQQy5FCnzRs50RXSIc=
+		</data>
+		<key>Info-iOS.plist</key>
+		<data>
+		CZhOMydGbB2a1C0StLDCMFmnhNA=
+		</data>
+		<key>Info-tvOS.plist</key>
+		<data>
+		RGgl/t7pDR3LVsg3pAQ/XmbdrBU=
+		</data>
+		<key>Info-watchOS.plist</key>
+		<data>
+		CZhOMydGbB2a1C0StLDCMFmnhNA=
 		</data>
 		<key>Info.plist</key>
 		<data>
-		vlozS/VuB6zB81RFXkg0HyjRZA4=
+		/479jAa9K2wNrodK940waNHsJsc=
+		</data>
+		<key>Modules/HokoConnectKit.swiftmodule/arm.swiftdoc</key>
+		<data>
+		zLnM1BCM/IEqxCQiXJjCEtnVQPM=
+		</data>
+		<key>Modules/HokoConnectKit.swiftmodule/arm.swiftmodule</key>
+		<data>
+		V6DHPpP73j/h/SkApT9tVZl9Tyw=
 		</data>
 		<key>Modules/HokoConnectKit.swiftmodule/arm64.swiftdoc</key>
 		<data>
-		nrzdKrDKYNUkkjj8S+tQOnRZwog=
+		3f63XY5eLdYOwa2mFpxkfozHPYE=
 		</data>
 		<key>Modules/HokoConnectKit.swiftmodule/arm64.swiftmodule</key>
 		<data>
-		uJYolM2MAsi6vvgqsD3StYrNhEc=
+		xznYRjGopI7XWMxc2OHRZHGphhM=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -37,23 +61,47 @@
 	<dict>
 		<key>Assets.car</key>
 		<data>
-		bPQazwsaRzaEgnxeWf++XSQwgI4=
+		UCMXGStPKXrOnRxDuCFA50NGSsc=
 		</data>
 		<key>Headers/HokoConnectKit-Swift.h</key>
 		<data>
-		Eum7Xy3qy7qp3/gfbTzFzEvUaqY=
+		bLChLo5FOylwOBSSc1MCNKNyCps=
 		</data>
 		<key>Headers/HokoConnectKit.h</key>
 		<data>
-		1YatnDE5WNXqG42x0QzmSoAfhT0=
+		il/68Nv4c8peyI61Y2wAQF7vFmI=
+		</data>
+		<key>Info-OSX.plist</key>
+		<data>
+		yQQVAEDVKvQQy5FCnzRs50RXSIc=
+		</data>
+		<key>Info-iOS.plist</key>
+		<data>
+		CZhOMydGbB2a1C0StLDCMFmnhNA=
+		</data>
+		<key>Info-tvOS.plist</key>
+		<data>
+		RGgl/t7pDR3LVsg3pAQ/XmbdrBU=
+		</data>
+		<key>Info-watchOS.plist</key>
+		<data>
+		CZhOMydGbB2a1C0StLDCMFmnhNA=
+		</data>
+		<key>Modules/HokoConnectKit.swiftmodule/arm.swiftdoc</key>
+		<data>
+		zLnM1BCM/IEqxCQiXJjCEtnVQPM=
+		</data>
+		<key>Modules/HokoConnectKit.swiftmodule/arm.swiftmodule</key>
+		<data>
+		V6DHPpP73j/h/SkApT9tVZl9Tyw=
 		</data>
 		<key>Modules/HokoConnectKit.swiftmodule/arm64.swiftdoc</key>
 		<data>
-		nrzdKrDKYNUkkjj8S+tQOnRZwog=
+		3f63XY5eLdYOwa2mFpxkfozHPYE=
 		</data>
 		<key>Modules/HokoConnectKit.swiftmodule/arm64.swiftmodule</key>
 		<data>
-		uJYolM2MAsi6vvgqsD3StYrNhEc=
+		xznYRjGopI7XWMxc2OHRZHGphhM=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
