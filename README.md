@@ -29,6 +29,7 @@ Setup our SDK by calling the `setup` method with your app token, inside the
 `application:didFinishLaunchingWithOptions` method of your `AppDelegate` file.
 
 ```swift
+// Swift
 func application(application: UIApplication,
   didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
     HokoConnectKit.sharedInstance.setup("YOUR-APP-TOKEN-GOES-HERE")
@@ -37,7 +38,8 @@ func application(application: UIApplication,
 ```
 
 ```objc
-// Soon...
+// Objective-C
+// Soon ...
 ```
 
 You can find your app token inside the dashboard. If you need our SDK to be verbose, use the
