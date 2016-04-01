@@ -5,7 +5,7 @@
 [![HokoConnectKit Pod](https://img.shields.io/cocoapods/v/HokoConnectKit.svg?style=flat)](https://cocoapods.org/pods/HokoConnectKit)
 
 # HokoConnectKit
-Mobile greatness in the making! Coming soon. [http://hoko.io](hoko.io)
+Mobile greatness in the making! Coming soon. [hoko.io](http://hoko.io)
 
 ## Installation
 
