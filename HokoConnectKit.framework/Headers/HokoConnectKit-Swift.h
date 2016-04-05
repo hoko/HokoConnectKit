@@ -94,6 +94,7 @@ typedef int swift_int4  __attribute__((__ext_vector_type__(4)));
 #if defined(__has_feature) && __has_feature(modules)
 @import QuartzCore;
 @import UIKit;
+@import ObjectiveC;
 @import Foundation;
 @import Foundation.NSURLSession;
 #endif
@@ -110,6 +111,10 @@ SWIFT_CLASS("_TtC14HokoConnectKit13ConnectButton")
 @interface ConnectButton : UIButton
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+@interface ConnectButton (SWIFT_EXTENSION(HokoConnectKit))
 @end
 
 
@@ -138,7 +143,28 @@ SWIFT_CLASS("_TtC14HokoConnectKit13ConnectButton")
 @end
 
 
-@interface ConnectButton (SWIFT_EXTENSION(HokoConnectKit))
+SWIFT_CLASS("_TtC14HokoConnectKit11ConnectLink")
+@interface ConnectLink : NSObject
+@property (nonatomic, copy) NSString * _Nullable code;
+@property (nonatomic, copy) NSString * _Nullable title;
+@property (nonatomic, copy) NSString * _Nullable desc;
+@property (nonatomic, copy) NSArray<NSString *> * _Nonnull tags;
+@end
+
+
+SWIFT_CLASS("_TtC14HokoConnectKit14HokoConnectKit")
+@interface HokoConnectKit : NSObject
++ (HokoConnectKit * _Nonnull)sharedInstance;
++ (void)setSharedInstance:(HokoConnectKit * _Nonnull)value;
+
+/// Setups the SDK with the respectived token.
+///
+/// \param token The <code>String
+/// </code> that identifies your app.
+///
+/// \param verbose If true, the SDK will print debug messages.
+- (void)setup:(NSString * _Nullable)token verbose:(BOOL)verbose;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
 
@@ -167,6 +193,18 @@ SWIFT_CLASS("_TtC14HokoConnectKit13ConnectButton")
 
 
 @interface NSURLSession (SWIFT_EXTENSION(HokoConnectKit))
+@end
+
+
+SWIFT_CLASS("_TtC14HokoConnectKit7Partner")
+@interface Partner : NSObject
+@property (nonatomic, copy) NSString * _Nullable code;
+@property (nonatomic, copy) NSString * _Nullable name;
+@property (nonatomic, copy) NSString * _Nullable iconUrl;
+@property (nonatomic, copy) NSString * _Nullable bannerUrl;
+@property (nonatomic, copy) NSString * _Nullable desc;
+@property (nonatomic, copy) NSArray<ConnectLink *> * _Nonnull connectLinks;
+@property (nonatomic, copy) NSArray<NSString *> * _Nonnull tags;
 @end
 
 
