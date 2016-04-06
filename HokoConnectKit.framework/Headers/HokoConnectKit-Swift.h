@@ -115,11 +115,11 @@ SWIFT_CLASS("_TtC14HokoConnectKit13ConnectButton")
 
 
 @interface ConnectButton (SWIFT_EXTENSION(HokoConnectKit))
+- (void)layoutSubviews;
 @end
 
 
 @interface ConnectButton (SWIFT_EXTENSION(HokoConnectKit))
-- (void)layoutSubviews;
 @end
 
 
@@ -145,10 +145,10 @@ SWIFT_CLASS("_TtC14HokoConnectKit13ConnectButton")
 
 SWIFT_CLASS("_TtC14HokoConnectKit11ConnectLink")
 @interface ConnectLink : NSObject
-@property (nonatomic, copy) NSString * _Nullable code;
-@property (nonatomic, copy) NSString * _Nullable title;
-@property (nonatomic, copy) NSString * _Nullable desc;
-@property (nonatomic, copy) NSArray<NSString *> * _Nonnull tags;
+@property (nonatomic, readonly, copy) NSString * _Nullable code;
+@property (nonatomic, readonly, copy) NSString * _Nullable title;
+@property (nonatomic, readonly, copy) NSString * _Nullable desc;
+@property (nonatomic, readonly, copy) NSArray<NSString *> * _Nonnull tags;
 @end
 
 
@@ -157,7 +157,7 @@ SWIFT_CLASS("_TtC14HokoConnectKit14HokoConnectKit")
 + (HokoConnectKit * _Nonnull)sharedInstance;
 + (void)setSharedInstance:(HokoConnectKit * _Nonnull)value;
 
-/// Setups the SDK with the respectived token.
+/// Performs the SDK setup with the respectived token.
 ///
 /// \param token The <code>String
 /// </code> that identifies your app.
@@ -198,17 +198,25 @@ SWIFT_CLASS("_TtC14HokoConnectKit14HokoConnectKit")
 
 SWIFT_CLASS("_TtC14HokoConnectKit7Partner")
 @interface Partner : NSObject
-@property (nonatomic, copy) NSString * _Nullable code;
-@property (nonatomic, copy) NSString * _Nullable name;
-@property (nonatomic, copy) NSString * _Nullable iconUrl;
-@property (nonatomic, copy) NSString * _Nullable bannerUrl;
-@property (nonatomic, copy) NSString * _Nullable desc;
-@property (nonatomic, copy) NSArray<ConnectLink *> * _Nonnull connectLinks;
-@property (nonatomic, copy) NSArray<NSString *> * _Nonnull tags;
+@property (nonatomic, readonly, copy) NSString * _Nullable code;
+@property (nonatomic, readonly, copy) NSString * _Nullable name;
+@property (nonatomic, readonly, copy) NSString * _Nullable iconUrl;
+@property (nonatomic, readonly, copy) NSString * _Nullable bannerUrl;
+@property (nonatomic, readonly, copy) NSString * _Nullable desc;
+@property (nonatomic, readonly, copy) NSArray<ConnectLink *> * _Nonnull connectLinks;
+@property (nonatomic, readonly, copy) NSArray<NSString *> * _Nonnull tags;
+@end
+
+
+@interface UIButton (SWIFT_EXTENSION(HokoConnectKit))
 @end
 
 
 @interface UIColor (SWIFT_EXTENSION(HokoConnectKit))
+@end
+
+
+@interface UIImage (SWIFT_EXTENSION(HokoConnectKit))
 @end
 
 
