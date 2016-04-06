@@ -20,6 +20,4 @@ Pod::Spec.new do |s|
   s.vendored_frameworks = 'HokoConnectKit.framework'
 
   s.requires_arc = true
-
-  s.frameworks 'SafariServices'
 end
