@@ -149,6 +149,7 @@ SWIFT_CLASS("_TtC14HokoConnectKit11ConnectLink")
 @property (nonatomic, readonly, copy) NSString * _Nullable title;
 @property (nonatomic, readonly, copy) NSString * _Nullable desc;
 @property (nonatomic, readonly, copy) NSArray<NSString *> * _Nonnull tags;
+@property (nonatomic, readonly, copy) NSDictionary<NSString *, id> * _Nullable metadata;
 @end
 
 

@@ -6,11 +6,11 @@
 	<dict>
 		<key>Assets.car</key>
 		<data>
-		qaW4ZfsY4Ta2B7OOrAGD5iDEYtA=
+		7JTBG8se0nieyJBEYp2vUc37K1A=
 		</data>
 		<key>Headers/HokoConnectKit-Swift.h</key>
 		<data>
-		tezQ9aPq7WrD8/Hoa9CMkUE67TA=
+		vmtDkj1aE0pogmDKfAeLO474F8o=
 		</data>
 		<key>Headers/HokoConnectKit.h</key>
 		<data>
@@ -42,7 +42,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		1Qq/UuTH22Fa8fvRoJA6SiAzS/A=
+		WXjqh4OGEC1iKAdCkZYu6aRbvZg=
 		</data>
 		<key>LICENSE</key>
 		<data>
@@ -54,7 +54,7 @@
 		</data>
 		<key>Modules/HokoConnectKit.swiftmodule/arm.swiftmodule</key>
 		<data>
-		+7wTaN2C/CeLUf+3xZ7sCmNyJpQ=
+		BR5reqK+RgqpRe/3bvdE8lT8pSQ=
 		</data>
 		<key>Modules/HokoConnectKit.swiftmodule/arm64.swiftdoc</key>
 		<data>
@@ -62,7 +62,7 @@
 		</data>
 		<key>Modules/HokoConnectKit.swiftmodule/arm64.swiftmodule</key>
 		<data>
-		VxRzGENbj2gxxtPfn9RgBhvsEls=
+		BGkGnYUkH9m4Kj5is4oj/S7B3Qk=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -189,22 +189,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			qaW4ZfsY4Ta2B7OOrAGD5iDEYtA=
+			7JTBG8se0nieyJBEYp2vUc37K1A=
 			</data>
 			<key>hash2</key>
 			<data>
-			pnBxNgax6CzYKsUxczBgMVyc9UrPgMF3l2nqCE+stq4=
+			RPJkP4rvwSCl5gzmALgoPqk5NMln8dcmTkuBTTrWVdY=
 			</data>
 		</dict>
 		<key>Headers/HokoConnectKit-Swift.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			tezQ9aPq7WrD8/Hoa9CMkUE67TA=
+			vmtDkj1aE0pogmDKfAeLO474F8o=
 			</data>
 			<key>hash2</key>
 			<data>
-			SV9WuDVmm1hbTdI+V+JCxiEUQe7kXOvp/M4eUcmS/rc=
+			r/VIUXsWvdA0XoWQRh3x2WuJ8gnr+y8+MJvMyaKxhww=
 			</data>
 		</dict>
 		<key>Headers/HokoConnectKit.h</key>
@@ -310,11 +310,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			+7wTaN2C/CeLUf+3xZ7sCmNyJpQ=
+			BR5reqK+RgqpRe/3bvdE8lT8pSQ=
 			</data>
 			<key>hash2</key>
 			<data>
-			qNW/BU10qu1zOS6PoD7gPBHpqpXJwCMpE1mLkBmzw78=
+			2iXUpNP5EYR8EIrztB/mU0f6iDIfK6eR6F3nPAU4LRM=
 			</data>
 		</dict>
 		<key>Modules/HokoConnectKit.swiftmodule/arm64.swiftdoc</key>
@@ -332,11 +332,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			VxRzGENbj2gxxtPfn9RgBhvsEls=
+			BGkGnYUkH9m4Kj5is4oj/S7B3Qk=
 			</data>
 			<key>hash2</key>
 			<data>
-			3suTU+dfeoKkp35f6KPjqtlCvmvjIf7kj6P6AsVFllA=
+			I2kg5UD4YlrGss4zBNxWwiKg/+GPgJhiDVQQrys37xc=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
