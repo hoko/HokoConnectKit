@@ -158,13 +158,22 @@ SWIFT_CLASS("_TtC14HokoConnectKit14HokoConnectKit")
 + (HokoConnectKit * _Nonnull)sharedInstance;
 + (void)setSharedInstance:(HokoConnectKit * _Nonnull)value;
 
-/// Performs the SDK setup with the respectived token.
+/// Performs the SDK setup with the respective token.
 ///
 /// \param token The <code>String
 /// </code> that identifies your app.
 ///
 /// \param verbose If true, the SDK will print debug messages.
-- (void)setup:(NSString * _Nullable)token verbose:(BOOL)verbose;
+- (void)setup:(NSString * _Nullable)token verbose:(BOOL)verbose userId:(NSString * _Nullable)userId;
+
+/// Identify the user that is using your app with a unique Id like an email address or code. This Id is passed along to other apps through deep links for later attribution. By default we use the device unique Id to identify the user. When that fails we use a random code.
+///
+/// \param id The <code>String
+/// </code> that identifies you user.
+- (void)setUserId:(NSString * _Nonnull)identifier;
+
+/// Returns the code that identifies the current user.
+- (NSString * _Nonnull)getUserId;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
