@@ -164,11 +164,13 @@ SWIFT_CLASS("_TtC14HokoConnectKit14HokoConnectKit")
 /// </code> that identifies your app.
 ///
 /// \param verbose If true, the SDK will print debug messages.
+///
+/// \param userId A custom Id that identifies the current user (for attribution).
 - (void)setup:(NSString * _Nullable)token verbose:(BOOL)verbose userId:(NSString * _Nullable)userId;
 
 /// Identify the user that is using your app with a unique Id like an email address or code. This Id is passed along to other apps through deep links for later attribution. By default we use the device unique Id to identify the user. When that fails we use a random code.
 ///
-/// \param id The <code>String
+/// \param identifier The <code>String
 /// </code> that identifies you user.
 - (void)setUserId:(NSString * _Nonnull)identifier;
 
@@ -216,6 +218,8 @@ SWIFT_CLASS("_TtC14HokoConnectKit7Partner")
 @property (nonatomic, readonly, copy) NSArray<ConnectLink *> * _Nonnull connectLinks;
 @property (nonatomic, readonly, copy) NSArray<NSString *> * _Nonnull tags;
 @property (nonatomic, readonly, copy) NSArray<NSString *> * _Nonnull countryCodes;
+@property (nonatomic, readonly) BOOL isLocal;
+@property (nonatomic, readonly, copy) NSString * _Nullable localCountryCode;
 @end
 
 
