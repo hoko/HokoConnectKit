@@ -53,7 +53,7 @@ To prepare your app to receive incoming traffic from partners on the HOKO Networ
 func application(application: UIApplication, openURL url: NSURL, sourceApplication: String?,
                    annotation: AnyObject) -> Bool {
     if HokoConnectKit.sharedInstance.handleAttributionFromIncomingURL(url) {
-      // The deep link came from a HOKO partner
+      // The deep link came from a HOKO partner and was processed by the SDK
     } else {
       // Handle the incoming deep link with your code...
     }
