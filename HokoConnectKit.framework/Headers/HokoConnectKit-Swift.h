@@ -152,11 +152,15 @@ SWIFT_CLASS("_TtC14HokoConnectKit11ConnectLink")
 @property (nonatomic, readonly, copy) NSDictionary<NSString *, id> * _Nullable metadata;
 @end
 
+@class NSURL;
 
 SWIFT_CLASS("_TtC14HokoConnectKit14HokoConnectKit")
 @interface HokoConnectKit : NSObject
 + (HokoConnectKit * _Nonnull)sharedInstance;
 + (void)setSharedInstance:(HokoConnectKit * _Nonnull)value;
+
+/// Identify the user that is using your app with a unique Id like an email address or code. This Id is passed along to other apps through deep links for later attribution. By default we use the device unique Id to identify the user. When that fails we use a random code.
+@property (nonatomic, copy) NSString * _Nonnull userId;
 
 /// Performs the SDK setup with the respective token.
 ///
@@ -168,14 +172,15 @@ SWIFT_CLASS("_TtC14HokoConnectKit14HokoConnectKit")
 /// \param userId A custom Id that identifies the current user (for attribution).
 - (void)setup:(NSString * _Nullable)token verbose:(BOOL)verbose userId:(NSString * _Nullable)userId;
 
-/// Identify the user that is using your app with a unique Id like an email address or code. This Id is passed along to other apps through deep links for later attribution. By default we use the device unique Id to identify the user. When that fails we use a random code.
+/// This method handles the deeplink that came from one of HOKO's partners for user attribution. This should be called on the AppDelegate's application(_:openURL:sourceApplication:annotation:).
 ///
-/// \param identifier The <code>String
-/// </code> that identifies you user.
-- (void)setUserId:(NSString * _Nonnull)identifier;
-
-/// Returns the code that identifies the current user.
-- (NSString * _Nonnull)getUserId;
+/// \param url The deeplink that was called on one of HOKO's partners app.
+///
+/// \returns  <code>true
+/// </code> if the deeplink is from a HOKO partner and was processed by the SDK,
+/// <code>false
+/// </code> otherwise.
+- (BOOL)handleAttributionFromIncomingURL:(NSURL * _Nonnull)url;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
