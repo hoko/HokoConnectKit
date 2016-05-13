@@ -68,7 +68,7 @@ func application(application: UIApplication, openURL url: NSURL, sourceApplicati
 
 This step is **extremely necessary** to prepare the SDK to track events explained in the next section.
 
-## Tracking
+## Event Tracking
 
 The SDK offers the ability to track user events, such as orders (with a given amount, quantity, etc...), that are used to
 identify the actions that a specific user, sent from a HOKO partner app to yours, performed.  
