@@ -38,11 +38,6 @@ func application(application: UIApplication,
 }
 ```
 
-```objc
-// Objective-C
-// Soon ...
-```
-
 You can find your app `token` inside the dashboard. If you need our SDK to be verbose, use the `verbose` parameter.
 
 ## Receiving Incoming Traffic from the HOKO Network
@@ -59,11 +54,6 @@ func application(application: UIApplication, openURL url: NSURL, sourceApplicati
     }
     return true
 }
-```
-
-```objc
-// Objective-C
-// Soon ...
 ```
 
 This step is **extremely necessary** to prepare the SDK to track events explained in the next section.
@@ -86,11 +76,6 @@ HokoConnectKit.tracking.trackOrder(withAmount: 20)
 HokoConnectKit.tracking.trackOrder(withAmount: 10, currency: "EUR")
 ```
 
-```objc
-// Objective-C
-// Soon ...
-```
-
 The `trackOrder` method has a total of 4 parameters:
 - `amount` - **required**: the total amount of the purchase
 - `quantity` - **optional** : the number of items bought (defaults to `1`)
@@ -106,11 +91,6 @@ HokoConnectKit.tracking.trackEvent(withCode: "your-code-here")
 // a custom event with metadata
 let metadata = ["page": "sign-up", "gender": "male"]
 HokoConnectKit.tracking.trackEvent(withCode: "your-code-here", metadata: metadata)
-```
-
-```objc
-// Objective-C
-// Soon ...
 ```
 
 The `trackEvent` method has a total of 2 parameters:
