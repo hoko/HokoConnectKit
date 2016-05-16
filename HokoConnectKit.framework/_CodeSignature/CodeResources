@@ -6,7 +6,7 @@
 	<dict>
 		<key>Assets.car</key>
 		<data>
-		PL2Y+ZfHMOw9UiZQo8yXk0iR91s=
+		CyDT6ft14bk8aeXJQZr5+Y42jkM=
 		</data>
 		<key>Headers/HokoConnectKit-Swift.h</key>
 		<data>
@@ -34,7 +34,7 @@
 		</data>
 		<key>Info-tvOS.plist</key>
 		<data>
-		XjFcZtb8vBtzBE5Jv0RIza3S2zg=
+		RGgl/t7pDR3LVsg3pAQ/XmbdrBU=
 		</data>
 		<key>Info-watchOS.plist</key>
 		<data>
@@ -42,7 +42,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		FBgEINsXi7GTPc0hG/5zfh2jquA=
+		Y1bWD/pQ3OWzZeaF5eBzwnR8E7E=
 		</data>
 		<key>LICENSE</key>
 		<data>
@@ -189,11 +189,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			PL2Y+ZfHMOw9UiZQo8yXk0iR91s=
+			CyDT6ft14bk8aeXJQZr5+Y42jkM=
 			</data>
 			<key>hash2</key>
 			<data>
-			81XKeHP815EmzG9mpV9OM1XV1YITXvrrriJHIEFZhJU=
+			rLJYRgLtE8SnQnuHwf+ajRTK2J4FKDVQjZGxY7SC9DQ=
 			</data>
 		</dict>
 		<key>Headers/HokoConnectKit-Swift.h</key>
@@ -266,11 +266,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			XjFcZtb8vBtzBE5Jv0RIza3S2zg=
+			RGgl/t7pDR3LVsg3pAQ/XmbdrBU=
 			</data>
 			<key>hash2</key>
 			<data>
-			1oxh0a9HaRLKhgqWMc45Fk5Lytra/BRXnMaasoJTHtE=
+			1VoSAUbRb6YGES6Ws8mGLltN/eb53j5kWVwM+muyPvo=
 			</data>
 		</dict>
 		<key>Info-watchOS.plist</key>
