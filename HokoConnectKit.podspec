@@ -12,7 +12,7 @@ Pod::Spec.new do |s|
     'Hugo Sequeira' => 'hugo@hoko.io',
     'Ricardo Otero' => 'ricardo@hoko.io'
   }
-  s.source = {:git => 'https://github.com/hokolinks/HokoConnectKit.git', :tag => s.version }
+  s.source = {:git => 'https://github.com/hoko/HokoConnectKit.git', :tag => s.version }
 
   s.ios.deployment_target = '8.0'
 
