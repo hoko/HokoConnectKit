@@ -52,7 +52,7 @@ You can find your app `token` inside the dashboard. If you need our SDK to be ve
 
 ## Receiving Incoming Traffic from the HOKO Network
 
-To prepare your app to receive incoming traffic from partners on the HOKO Network, add the following code to your `AppDelegate` file:
+Prepare your app to receive incoming traffic from the HOKO Network. Add the following code to your `AppDelegate` file:
 
 ```swift
 func application(application: UIApplication, openURL url: NSURL, sourceApplication: String?,
