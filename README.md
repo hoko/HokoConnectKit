@@ -1,11 +1,6 @@
-<p align="center" >
-<img src="https://s3-eu-west-1.amazonaws.com/hokoassets/hoko_logo.png" alt="Hoko" title="Hoko">
-</p>
-
 [![HokoConnectKit Pod](https://img.shields.io/cocoapods/v/HokoConnectKit.svg?style=flat)](https://cocoapods.org/pods/HokoConnectKit)
 
 # HokoConnectKit
-Mobile greatness in the making. Coming soon at [HOKO.IO](http://hoko.io)
 
 ## Installation
 
@@ -33,7 +28,18 @@ Then, setup our SDK by calling the `setup` method, inside the
 // Swift
 func application(application: UIApplication,
   didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+    // Initialize the SDK by adding your tracking to Info.plist with the key "HokoConnectToken"
     HokoConnectKit.sharedInstance.setup()
+    
+    // Or just by adding the tracking code here
+    // HokoConnectKit.sharedInstance.setup("mytoken")
+    
+    // Then, once soon the user logs in, report back its internal and unique Id, e.g. e-mail or numberical Id
+    HokoConnectKit.sharedInstance.userId = "user@email.com"
+    
+    // Or, all in one go
+    // HokoConnectKit.sharedInstance.setup("mytoken", verbose: true, userId: "user@email.com")
+    
     ...
 }
 ```
@@ -42,15 +48,16 @@ You can find your app `token` inside the dashboard. If you need our SDK to be ve
 
 ## Receiving Incoming Traffic from the HOKO Network
 
-To prepare your app to receive incoming traffic from partners on the HOKO Network, add the following code to your `AppDelegate` file:
+Prepare your app to receive incoming traffic from the HOKO Network. Add the following code to your `AppDelegate` file:
 
 ```swift
 func application(application: UIApplication, openURL url: NSURL, sourceApplication: String?,
                    annotation: AnyObject) -> Bool {
     if HokoConnectKit.sharedInstance.handleAttributionFromIncomingURL(url) {
       // The deep link came from a HOKO partner and was processed by the SDK
+      // No need to do nothing...
     } else {
-      // Handle the incoming deep link with your code...
+      // Handle the incoming deep link with your code, e.g. open some view
     }
     return true
 }
