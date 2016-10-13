@@ -28,17 +28,17 @@ Then, setup our SDK by calling the `setup` method, inside the
 // Swift
 func application(application: UIApplication,
   didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-    // Initialize the SDK by adding your tracking to Info.plist with the key "HokoConnectToken"
+    // Initialize the SDK by adding your tracking token to Info.plist with the key "HokoConnectToken"
     HokoConnectKit.sharedInstance.setup()
     
     // Or just by adding the tracking code here
-    // HokoConnectKit.sharedInstance.setup("mytoken")
+    // HokoConnectKit.sharedInstance.setup("MY_TOKEN")
     
     // Then, once soon the user logs in, report back its internal and unique Id, e.g. e-mail or numberical Id
     HokoConnectKit.sharedInstance.userId = "user@email.com"
     
     // Or, all in one go
-    // HokoConnectKit.sharedInstance.setup("mytoken", verbose: true, userId: "user@email.com")
+    // HokoConnectKit.sharedInstance.setup("MY_TOKEN", verbose: true, userId: "user@email.com")
     
     ...
 }
