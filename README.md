@@ -1,108 +1,21 @@
-[![HokoConnectKit Pod](https://img.shields.io/cocoapods/v/HokoConnectKit.svg?style=flat)](https://cocoapods.org/pods/HokoConnectKit)
-
 # HokoConnectKit
 
-## Installation
+iOS | Android
+--- | ---
+[![HokoConnectKit Pod](https://img.shields.io/cocoapods/v/HokoConnectKit.svg?style=flat)](https://cocoapods.org/pods/HokoConnectKit) | [![Download](https://api.bintray.com/packages/hoko/maven/hokoconnectkit/images/download.svg) ](https://bintray.com/hoko/maven/hokoconnectkit/_latestVersion)
 
-The SDK is available through CocoaPods, a brilliant dependency manager for Xcode.
-If you are not using CocoaPods, please follow the
-[Getting Started Guide](http://guides.cocoapods.org/using/getting-started.html) to quickly set it up.
+## Getting started
 
-Once you are done with the setup, edit your `Podfile` and add `HokoConnectKit` to your target
-(don't forget to also add `use_frameworks!` if your project is using swift):
+If you are a publisher that wants to setup a network of partner apps, follow these steps:
 
-```bash
-pod 'HokoConnectKit'
-```
+1. Create an account at [hoko.io](http://hoko.io) and setup your network
+2. Follow the instructions of our [getting started guide](http://docs.hoko.io/publisher/ios/getting_started.html) to get you app ready
 
-Save the file and run `pod install` to download the SDK. Once the installation is complete,
-open your project through the `.xcworkspace` file.
+If you are an advertiser that wants to join the network of a publisher, follow these instructions:
 
-## Setup
-
-Start by adding a new entry to your app's `Info.plist` with the key `HokoConnectToken` and the value being your `token`.  
-Then, setup our SDK by calling the `setup` method, inside the
-`application:didFinishLaunchingWithOptions` method of your `AppDelegate` file.
-
-```swift
-// Swift
-func application(application: UIApplication,
-  didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-    // Initialize the SDK by adding your tracking token to Info.plist with the key "HokoConnectToken"
-    HokoConnectKit.sharedInstance.setup()
-    
-    // Or just by adding the tracking code here
-    // HokoConnectKit.sharedInstance.setup("MY_TOKEN")
-    
-    // Then, once soon the user logs in, report back its internal and unique Id, e.g. e-mail or numberical Id
-    HokoConnectKit.sharedInstance.userId = "user@email.com"
-    
-    // Or, all in one go
-    // HokoConnectKit.sharedInstance.setup("MY_TOKEN", verbose: true, userId: "user@email.com")
-    
-    ...
-}
-```
-
-You can find your app `token` inside the dashboard. If you need our SDK to be verbose, use the `verbose` parameter.
-
-## Receiving Incoming Traffic from the HOKO Network
-
-Prepare your app to receive incoming traffic from the HOKO Network. Add the following code to your `AppDelegate` file:
-
-```swift
-func application(application: UIApplication, openURL url: NSURL, sourceApplication: String?,
-                   annotation: AnyObject) -> Bool {
-    if HokoConnectKit.sharedInstance.handleAttributionFromIncomingURL(url) {
-      // The deep link came from a HOKO partner and was processed by the SDK
-      // No need to do nothing...
-    } else {
-      // Handle the incoming deep link with your code, e.g. open some view
-    }
-    return true
-}
-```
-
-This step is **extremely necessary** to prepare the SDK to track events explained in the next section.
-
-## Event Tracking
-
-The SDK offers the ability to track user events, such as orders (with a given amount, quantity, etc...), that are used to
-identify the actions that a specific user, sent from a HOKO partner app to yours, performed.  
-
-**NOTE**: Before tracking an event, make sure you've correctly set up the SDK. Also, the event tracking will only be performed if your current user was sent to your app via a partner registered on the HOKO Network, as explained in the last section (no need to check for this case, the SDK will handle all of that).
-
-Events are separated in 2 different types: `order` and `general` events.  
-To track an `order` event, simply call:
-
-```swift
-// the user bought a product worth 20£ (£ is the default currency)
-HokoConnectKit.tracking.trackOrder(withAmount: 20)
-
-// the user bought a product worth 10€
-HokoConnectKit.tracking.trackOrder(withAmount: 10, currency: "EUR")
-```
-
-The `trackOrder` method has a total of 4 parameters:
-- `amount` - **required**: the total amount of the purchase
-- `quantity` - **optional** : the number of items bought (defaults to `1`)
-- `productId` - **optional**: the id of your product bought by the user
-- `currency` - **optional**: the [ISO 4217 currency code](http://www.xe.com/iso4217.php) used for the order (defaults to `GBP` - £)
-
-On the other hand, to track a `general` event with any type of metadata, both parties need to agree on a specific code for a given type of event and use that code as the first parameter of the `trackEvent` method:
-
-```swift
-// a simple custom event with no context
-HokoConnectKit.tracking.trackEvent(withCode: "your-code-here")
-
-// a custom event with metadata
-let metadata = ["page": "sign-up", "gender": "male"]
-HokoConnectKit.tracking.trackEvent(withCode: "your-code-here", metadata: metadata)
-```
-
-The `trackEvent` method has a total of 2 parameters:
-- `code` - **required**: the code that identifies the custom event
-- `metadata` - **optional**: a dictionary that contains any other information that can be used to give richer insights regarding the event
+1. Use the referrer link provided by your publisher to setup an account
+2. Create campaigns and submit them for review
+2. Follow the instructions of our [getting started guide](http://docs.hoko.io/advertiser/ios/getting_started.html) to track conversions
 
 ## Contributing
 
