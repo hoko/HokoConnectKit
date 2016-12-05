@@ -7,8 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "SVWebViewController.h"
-#import "SVModalWebViewController.h"
 
 //! Project version number for HokoConnectKit.
 FOUNDATION_EXPORT double HokoConnectKitVersionNumber;
