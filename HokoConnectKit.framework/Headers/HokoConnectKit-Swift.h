@@ -137,9 +137,9 @@ SWIFT_CLASS("_TtC14HokoConnectKit10Advertiser")
 */
 @property (nonatomic, readonly, copy) NSString * _Nonnull name;
 /**
-  The app description. The description can be an empty string
+  The app details
 */
-@property (nonatomic, readonly, copy) NSString * _Nonnull shortDescription;
+@property (nonatomic, readonly, copy) NSDictionary<NSString *, id> * _Nonnull details;
 /**
   Once you derive an Advertiser from a group, you can use this method to obtain its campaigns.
   \param completionCallback Callback called when the request is completed and that holds the
@@ -318,8 +318,28 @@ SWIFT_CLASS("_TtC14HokoConnectKit7Context")
 
 SWIFT_CLASS("_TtC14HokoConnectKit5Group")
 @interface Group : NSObject
+/**
+  The group internal code
+*/
 @property (nonatomic, readonly, copy) NSString * _Nonnull code;
+/**
+  The name of the group
+*/
 @property (nonatomic, readonly, copy) NSString * _Nonnull name;
+/**
+  The description of the group
+*/
+@property (nonatomic, readonly, copy) NSString * _Nullable shortDescription;
+/**
+  Constructs a Group object manually.
+  \param code a unique code that represents the group
+
+  \param name a name that identifies the group
+
+  \param shortDescription quick description
+
+*/
+- (nonnull instancetype)initWithCode:(NSString * _Nonnull)code name:(NSString * _Nonnull)name shortDescription:(NSString * _Nonnull)shortDescription OBJC_DESIGNATED_INITIALIZER;
 /**
   Get the campaigns that belongs to this group.
   \param completionCallback Callback called when the request is completed and that holds the
