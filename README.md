@@ -27,4 +27,4 @@ Need help? Don't be shy, drop us a message at [contact@hoko.io](mailto:contact@h
 
 ## License
 
-All rights reserved © 2016 HOKO S.A. :heart: London
+All rights reserved © 2017 HOKO S.A. :heart: London
