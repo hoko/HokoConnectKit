@@ -178,6 +178,10 @@ SWIFT_CLASS("_TtC14HokoConnectKit16AffiliateService")
   Deeplink to the app
 */
 @property (nonatomic, readonly, copy) NSString * _Nonnull link;
+/**
+  Service extra details
+*/
+@property (nonatomic, readonly, copy) NSDictionary<NSString *, id> * _Nonnull details;
 - (void)open;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 @end
@@ -242,10 +246,6 @@ SWIFT_CLASS("_TtC14HokoConnectKit8Campaign")
   The campaign tags. The tags can be an empty array
 */
 @property (nonatomic, readonly, copy) NSArray<NSString *> * _Nonnull tags;
-/**
-  The campaign metadata. The metadata can be an empty dictionary
-*/
-@property (nonatomic, readonly, copy) NSDictionary<NSString *, id> * _Nonnull metadata;
 /**
   Flag that indicates whether the campaign is associated to an affiliate
 */
