@@ -6,7 +6,7 @@
 	<dict>
 		<key>Headers/HokoConnectKit-Swift.h</key>
 		<data>
-		YbJcG9VOjtQnUykXqnmxVJij08Y=
+		8h35wohar2HWVCSmOD0Tr36K5f4=
 		</data>
 		<key>Headers/HokoConnectKit.h</key>
 		<data>
@@ -18,23 +18,23 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		X4rYLlVZLeYNQJ5FLeXaMzw/yLw=
+		hZ/J2lBvvr53MhHtNgWFNdtOQJ0=
 		</data>
 		<key>Modules/HokoConnectKit.swiftmodule/arm.swiftdoc</key>
 		<data>
-		OJmyGuNpehlFGUitbUt23QyyQiY=
+		frVVJm73dKFZwo/eXhGQ6N+A96Y=
 		</data>
 		<key>Modules/HokoConnectKit.swiftmodule/arm.swiftmodule</key>
 		<data>
-		+0ZNIH+SdkFjqM+qg72+fReK14M=
+		SMSFfZU7yeIexi2iY3dxSY/Wyfk=
 		</data>
 		<key>Modules/HokoConnectKit.swiftmodule/arm64.swiftdoc</key>
 		<data>
-		yKDuH6e0bxupkB96HTIL1LaKg6Y=
+		GEPKMlnHZyxCgZpxBBBcFwRe+18=
 		</data>
 		<key>Modules/HokoConnectKit.swiftmodule/arm64.swiftmodule</key>
 		<data>
-		FKF2XMJayqA4KWRM1TDYgQw4kqM=
+		wkZrmI2NpzXObg1UMhkFcA2U9zk=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -47,11 +47,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			YbJcG9VOjtQnUykXqnmxVJij08Y=
+			8h35wohar2HWVCSmOD0Tr36K5f4=
 			</data>
 			<key>hash2</key>
 			<data>
-			eKvlnozdh2mFyVnc4aIr6cgcdQPSFzlsuRGr7VcDBkw=
+			U5xeN2NRDdKY3NpCwgR3zZCeDA+4ge3jM+7LJ8schkg=
 			</data>
 		</dict>
 		<key>Headers/HokoConnectKit.h</key>
@@ -80,44 +80,44 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			OJmyGuNpehlFGUitbUt23QyyQiY=
+			frVVJm73dKFZwo/eXhGQ6N+A96Y=
 			</data>
 			<key>hash2</key>
 			<data>
-			Ndq54FjTJ4VHD870gMnJuwhS52LloF+w9FBnzrqie8Q=
+			8D8ZTEKqR/+QCypjn4lBM7samlNijaAMSZ1xGxK9Hzo=
 			</data>
 		</dict>
 		<key>Modules/HokoConnectKit.swiftmodule/arm.swiftmodule</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			+0ZNIH+SdkFjqM+qg72+fReK14M=
+			SMSFfZU7yeIexi2iY3dxSY/Wyfk=
 			</data>
 			<key>hash2</key>
 			<data>
-			ZM628RsrqJeMTJ3yCGk5TJ24/IchqwvXelk5keGtxN0=
+			cixXK6RNHexmzXVmL0TWZ/2rNZPlRy2S0LIbEws67Uc=
 			</data>
 		</dict>
 		<key>Modules/HokoConnectKit.swiftmodule/arm64.swiftdoc</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			yKDuH6e0bxupkB96HTIL1LaKg6Y=
+			GEPKMlnHZyxCgZpxBBBcFwRe+18=
 			</data>
 			<key>hash2</key>
 			<data>
-			+rsv+I2AGamXZQahAGu10oCtHNzesTBAZ6OZJ9FvDLE=
+			nIn5MZfn9NgsxkzW1LDczcNB4y5l95HyDKSjuaHHT4o=
 			</data>
 		</dict>
 		<key>Modules/HokoConnectKit.swiftmodule/arm64.swiftmodule</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			FKF2XMJayqA4KWRM1TDYgQw4kqM=
+			wkZrmI2NpzXObg1UMhkFcA2U9zk=
 			</data>
 			<key>hash2</key>
 			<data>
-			XsNzRzyjtoIPveaxZjDzUQjGPhozqfnJmxd6UQbu9r4=
+			5F9aQyS9otzLLOlEWp72PycYox9clqrK30+w+tU9MFE=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

@@ -290,10 +290,17 @@ SWIFT_CLASS("_TtC14HokoConnectKit8Campaign")
   app web link needs to be opened by the developer (with a custom in-app browser, for instance).
 
 */
-- (void)openOnViewController:(UIViewController * _Nonnull)viewController withMetadata:(NSDictionary<NSString *, NSString *> * _Nullable)metadata screenName:(NSString * _Nullable)screenName storeWillPresentCallback:(void (^ _Nullable)(void))storeWillPresentCallback storeWillDismissCallback:(void (^ _Nullable)(void))storeWillDismissCallback appWillOpenCallback:(void (^ _Nullable)(void))appWillOpenCallback openWebLinkCallback:(void (^ _Nullable)(NSString * _Nonnull))openWebLinkCallback affiliateServicesCallback:(void (^ _Nullable)(NSArray<AffiliateService *> * _Nonnull))affiliateServicesCallback failureCallback:(void (^ _Nullable)(NSString * _Nullable))failureCallback;
+- (void)openOnViewController:(UIViewController * _Nonnull)viewController withMetadata:(NSDictionary<NSString *, NSString *> * _Nullable)metadata noMetricChanges:(BOOL)noMetricChanges screenName:(NSString * _Nullable)screenName storeWillPresentCallback:(void (^ _Nullable)(void))storeWillPresentCallback storeWillDismissCallback:(void (^ _Nullable)(void))storeWillDismissCallback appWillOpenCallback:(void (^ _Nullable)(void))appWillOpenCallback openWebLinkCallback:(void (^ _Nullable)(NSString * _Nonnull))openWebLinkCallback affiliateServicesCallback:(void (^ _Nullable)(NSArray<AffiliateService *> * _Nonnull))affiliateServicesCallback failureCallback:(void (^ _Nullable)(NSString * _Nullable))failureCallback;
 /**
-  Inform HOKO about a tap event. Only use if the default behavior of the open method is not enough
-  — it already deals with opening the link and incrementing the relevant metrics.
+  Inform HOKO about a stand-alone metric change. Does not open any links or do anything else.
+  If tap, open and impression are false nothing is done.
+  Calling with only impression=true is equivalent to invoking method impress.
+  \param tap Whether to increment the number of taps.
+
+  \param open Whether to increment the number of opens.
+
+  \param impression Whether to increment the number of impressions.
+
   \param metadata The metadata that will be sent to the HOKO servers alongside
   the “open” notification. Used for analytics.
 
@@ -301,21 +308,7 @@ SWIFT_CLASS("_TtC14HokoConnectKit8Campaign")
   also used for analytics.
 
 */
-- (void)manualTapWithMetadata:(NSDictionary<NSString *, NSString *> * _Nullable)metadata screenName:(NSString * _Nullable)screenName;
-/**
-  Inform HOKO about an open, optionally without tap. Since this method does not actually attempt
-  to open any links, it also does not return affiliate campaigns if the campaign is from an
-  affiliate service.
-  \param addTap Whether to increment the number of taps, together with opens.
-
-  \param metadata The metadata that will be sent to the HOKO servers alongside
-  the “open” notification. Used for analytics.
-
-  \param screenName The name of the screen where the “open” occurred. This is
-  also used for analytics.
-
-*/
-- (void)manualOpenWithAddTap:(BOOL)addTap withMetadata:(NSDictionary<NSString *, NSString *> * _Nullable)metadata screenName:(NSString * _Nullable)screenName;
+- (void)reportMetricWithMetadata:(NSDictionary<NSString *, NSString *> * _Nullable)metadata tap:(BOOL)tap open:(BOOL)open impression:(BOOL)impression screenName:(NSString * _Nullable)screenName;
 /**
   Inform HOKO about an impression. The impression reporting may be delayed to save battery.
   Only use if the campaign retrieval did not use \code
