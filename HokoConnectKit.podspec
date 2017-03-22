@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name = 'HokoConnectKit'
-  s.version = '3.0.12'
+  s.version = '3.0.13'
   s.license = 'MIT'
   s.summary = 'Hoko Connect Kit'
   s.description = 'Hoko Connect Kit iOS SDK. Changing the way apps connect.'
@@ -10,6 +10,7 @@ Pod::Spec.new do |s|
     'Hokolinks S.A' => 'services@hoko.io',
     'Pedro Vieira' => 'pedro@hoko.io',
     'Hugo Sequeira' => 'hugo@hoko.io',
+    'Goncalo Ferreira' => 'goncalo.ferreira@hoko.io',
     'Ricardo Otero' => 'ricardo@hoko.io'
   }
   s.source = {:git => 'https://github.com/hoko/HokoConnectKit.git', :tag => s.version }

@@ -121,7 +121,6 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 
 #pragma clang diagnostic ignored "-Wproperty-attribute-mismatch"
 #pragma clang diagnostic ignored "-Wduplicate-method-arg"
-@class Campaign;
 
 /**
   The class that represents the Advertiser from a given Campaign.
@@ -140,20 +139,7 @@ SWIFT_CLASS("_TtC14HokoConnectKit10Advertiser")
   The app details
 */
 @property (nonatomic, readonly, copy) NSDictionary<NSString *, id> * _Nonnull details;
-/**
-  Once you derive an Advertiser from a group, you can use this method to obtain its campaigns.
-  \param completionCallback Callback called when the request is completed and that holds the
-  Advertisers array.
-
-  \param failureCallback Callback called when the request has ended with an error.
-
-*/
-- (void)getCampaigns:(void (^ _Nonnull)(NSArray<Campaign *> * _Nonnull))completion failure:(void (^ _Nullable)(NSString * _Nullable))failure;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
-@end
-
-
-@interface Advertiser (SWIFT_EXTENSION(HokoConnectKit))
 @end
 
 
@@ -253,10 +239,6 @@ SWIFT_CLASS("_TtC14HokoConnectKit8Campaign")
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 @end
 
-
-@interface Campaign (SWIFT_EXTENSION(HokoConnectKit))
-@end
-
 @class UIViewController;
 
 @interface Campaign (SWIFT_EXTENSION(HokoConnectKit))
@@ -319,6 +301,10 @@ SWIFT_CLASS("_TtC14HokoConnectKit8Campaign")
 @end
 
 
+@interface Campaign (SWIFT_EXTENSION(HokoConnectKit))
+@end
+
+
 SWIFT_CLASS("_TtC14HokoConnectKit7Content")
 @interface Content : NSObject
 - (nonnull instancetype)initWithId:(NSString * _Nonnull)id text:(NSString * _Nonnull)text type:(NSString * _Nullable)type OBJC_DESIGNATED_INITIALIZER;
@@ -356,6 +342,10 @@ SWIFT_CLASS("_TtC14HokoConnectKit5Group")
 */
 @property (nonatomic, readonly, copy) NSString * _Nullable shortDescription;
 /**
+  The description of the group
+*/
+@property (nonatomic, readonly, copy) NSArray<Group *> * _Nonnull subgroups;
+/**
   Constructs a Group object manually.
   \param code a unique code that represents the group
 
@@ -364,7 +354,7 @@ SWIFT_CLASS("_TtC14HokoConnectKit5Group")
   \param shortDescription quick description
 
 */
-- (nonnull instancetype)initWithCode:(NSString * _Nonnull)code name:(NSString * _Nonnull)name shortDescription:(NSString * _Nonnull)shortDescription OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)initWithCode:(NSString * _Nonnull)code name:(NSString * _Nonnull)name subgroups:(NSArray<Group *> * _Nonnull)subgroups shortDescription:(NSString * _Nonnull)shortDescription OBJC_DESIGNATED_INITIALIZER;
 /**
   Get the campaigns that belongs to this group.
   \param completionCallback Callback called when the request is completed and that holds the
@@ -374,20 +364,7 @@ SWIFT_CLASS("_TtC14HokoConnectKit5Group")
 
 */
 - (void)getCampaigns:(void (^ _Nonnull)(NSArray<Campaign *> * _Nonnull))completion failure:(void (^ _Nullable)(NSString * _Nullable))failure;
-/**
-  Get all the Advertisers that have campaigns that belongs to this group.
-  \param completionCallback Callback called when the request is completed and that holds the
-  Advertisers array.
-
-  \param failureCallback Callback called when the request has ended with an error.
-
-*/
-- (void)getAdvertisers:(void (^ _Nonnull)(NSArray<Advertiser *> * _Nonnull))completion failure:(void (^ _Nullable)(NSString * _Nullable))failure;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
-@end
-
-
-@interface Group (SWIFT_EXTENSION(HokoConnectKit))
 @end
 
 @class NSMutableArray;
@@ -436,14 +413,53 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) double impressionsQu
 */
 - (BOOL)handleAttributionFromIncomingURL:(NSURL * _Nonnull)url;
 /**
-  Get all the group campaigns available.
+  Get all the groups available. If withCampaignsOnly only return groups that have active campaigns.
+  With withCampaignsOnly = true you can select the campaigns filter for the same purpose.
+  <ul>
+    <li>
+      withCampaignsOnly: only return groups with associated campaigns.
+    </li>
+    <li>
+      tags: tags to be used to filter campaigns, and hence filter the groups.
+    </li>
+    <li>
+      matchingAllTags: whether all tags have to be present to filter campaigns.
+    </li>
+    <li>
+      advertiser: advertiser code to also filter campaigns by advertiser.
+    </li>
+  </ul>
   \param completionCallback Callback called when the request is completed and that holds
   the Groups array.
 
   \param failureCallback Callback called when the request has ended with an error.
 
 */
-- (void)getGroups:(void (^ _Nonnull)(NSArray<Group *> * _Nonnull))completionCallback failureCallback:(void (^ _Nullable)(NSString * _Nullable))failureCallback;
+- (void)getGroups:(void (^ _Nonnull)(NSArray<Group *> * _Nonnull))completionCallback withCampaignsOnly:(BOOL)withCampaignsOnly tags:(NSArray<NSString *> * _Nullable)tags matchingAllTags:(BOOL)matchingAllTags context:(Context * _Nullable)context advertiser:(NSString * _Nullable)advertiser failureCallback:(void (^ _Nullable)(NSString * _Nullable))failureCallback;
+/**
+  Get all the advertisers available. If withCampaignsOnly only return advertisers that have active campaigns.
+  With withCampaignsOnly = true you can select the campaigns filter for the same purpose.
+  <ul>
+    <li>
+      withCampaignsOnly: only return groups with associated campaigns.
+    </li>
+    <li>
+      tags: tags to be used to filter campaigns, and hence filter the groups.
+    </li>
+    <li>
+      matchingAllTags: whether all tags have to be present to filter campaigns.
+    </li>
+    <li>
+      group: group code to also filter campaigns by group.
+    </li>
+  </ul>
+  \param completionCallback Callback called when the request is completed and that holds
+  the Groups array.
+
+  \param failureCallback Callback called when the request has ended with an error.
+
+*/
+- (void)getAdvertisers:(void (^ _Nonnull)(NSArray<Advertiser *> * _Nonnull))completionCallback withCampaignsOnly:(BOOL)withCampaignsOnly tags:(NSArray<NSString *> * _Nullable)tags matchingAllTags:(BOOL)matchingAllTags context:(Context * _Nullable)context group:(NSString * _Nullable)group failureCallback:(void (^ _Nullable)(NSString * _Nullable))failureCallback;
 @end
 
 
