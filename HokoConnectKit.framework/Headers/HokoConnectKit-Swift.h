@@ -176,25 +176,13 @@ SWIFT_CLASS("_TtC14HokoConnectKit8Campaign")
 @interface Campaign : NSObject
 /// The campaign group
 @property (nonatomic, readonly, strong) Group * _Nullable group;
-/// The campaign headline
-@property (nonatomic, readonly, copy) NSString * _Nullable headline;
-/// The campaign call to action
-@property (nonatomic, readonly, copy) NSString * _Nullable callToAction;
-/// The campaign text/description or an empty string
-@property (nonatomic, readonly, copy) NSString * _Nullable text;
+/// The campaign extra details
+@property (nonatomic, readonly, copy) NSDictionary<NSString *, NSString *> * _Nonnull details;
 /// The advertiser associated with the campaign
 @property (nonatomic, readonly, strong) Advertiser * _Nullable advertiser;
 /// The campaign images
 @property (nonatomic, readonly, copy) NSString * _Nullable iconURL;
-@property (nonatomic, readonly, copy) NSString * _Nullable image_300x50;
-@property (nonatomic, readonly, copy) NSString * _Nullable image_320x48;
-@property (nonatomic, readonly, copy) NSString * _Nullable image_468x60;
-@property (nonatomic, readonly, copy) NSString * _Nullable image_728x90;
-@property (nonatomic, readonly, copy) NSString * _Nullable image_300x250;
-@property (nonatomic, readonly, copy) NSString * _Nullable image_320x480;
-@property (nonatomic, readonly, copy) NSString * _Nullable image_120x600;
-@property (nonatomic, readonly, copy) NSString * _Nullable image_800x1280;
-@property (nonatomic, readonly, copy) NSString * _Nullable image_768x1024;
+@property (nonatomic, readonly, copy) NSDictionary<NSString *, NSString *> * _Nonnull images;
 /// The campaign code
 @property (nonatomic, readonly, copy) NSString * _Nonnull code;
 /// The campaign name or an empty string
@@ -208,6 +196,10 @@ SWIFT_CLASS("_TtC14HokoConnectKit8Campaign")
 /// Flag that indicates whether the campaign is associated to an affiliate
 @property (nonatomic, readonly) BOOL isAffiliateCampaign;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
+@end
+
+
+@interface Campaign (SWIFT_EXTENSION(HokoConnectKit))
 @end
 
 @class UIViewController;
@@ -254,13 +246,10 @@ SWIFT_CLASS("_TtC14HokoConnectKit8Campaign")
 /// also used for analytics.
 ///
 - (void)reportMetricWithMetadata:(NSDictionary<NSString *, NSString *> * _Nullable)metadata tap:(BOOL)tap open:(BOOL)open impression:(BOOL)impression screenName:(NSString * _Nullable)screenName;
+- (NSString * _Nullable)image_for_sizeWithWidth:(NSInteger)width height:(NSInteger)height SWIFT_WARN_UNUSED_RESULT;
 /// Inform HOKO about an impression. The impression reporting may be delayed to save battery.
 /// Only use if the campaign retrieval did not use <code>addImpressions</code> == true.
 - (void)impress;
-@end
-
-
-@interface Campaign (SWIFT_EXTENSION(HokoConnectKit))
 @end
 
 
