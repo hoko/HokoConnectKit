@@ -148,6 +148,9 @@ SWIFT_CLASS("_TtC14HokoConnectKit10Advertiser")
 @property (nonatomic, readonly, copy) NSString * _Nonnull name;
 /// The app details
 @property (nonatomic, readonly, copy) NSDictionary<NSString *, id> * _Nonnull details;
+@property (nonatomic, readonly, copy) NSString * _Nullable iconURL;
+/// The app store ID of this advertiser
+@property (nonatomic, readonly) NSInteger appStoreId;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 @end
 
