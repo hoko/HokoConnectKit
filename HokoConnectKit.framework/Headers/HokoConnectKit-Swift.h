@@ -321,6 +321,8 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) double impressionsQu
 + (double)impressionsQueueTimeout SWIFT_WARN_UNUSED_RESULT;
 @property (nonatomic) BOOL isAllowedToAccessUserLocation;
 @property (nonatomic) BOOL alwaysOnLocationDiscovery;
+@property (nonatomic) BOOL discoverLocationBeforeRequests;
+- (void)clearLastLocation;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 /// Performs the SDK setup with the respective token.
 /// \param token The <code>String</code> that identifies your app.
