@@ -18,7 +18,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		zdtrvBpNQytvjRDFE7unp9S74go=
+		V6NAQNPlolje1cEhSqAF0pHFGpY=
 		</data>
 		<key>Modules/HokoConnectKit.swiftmodule/arm.swiftdoc</key>
 		<data>
@@ -26,7 +26,7 @@
 		</data>
 		<key>Modules/HokoConnectKit.swiftmodule/arm.swiftmodule</key>
 		<data>
-		w0n88DPTGqkgUoogDJa97oTWXXE=
+		DfJ8M7E7m+nIppWk1BuPNuKd194=
 		</data>
 		<key>Modules/HokoConnectKit.swiftmodule/arm64.swiftdoc</key>
 		<data>
@@ -34,7 +34,7 @@
 		</data>
 		<key>Modules/HokoConnectKit.swiftmodule/arm64.swiftmodule</key>
 		<data>
-		+oEYBidftZIFzYAMje/5roFEMv4=
+		ORRfZDpu/bQkIn6372ST9pBc/1o=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -91,11 +91,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			w0n88DPTGqkgUoogDJa97oTWXXE=
+			DfJ8M7E7m+nIppWk1BuPNuKd194=
 			</data>
 			<key>hash2</key>
 			<data>
-			mJNctOUR2Coohis/lyFwKVkRCyT/IqkGZDwn8jdtmiM=
+			Td1OA3xJHrD1iqET56KNIlvcnPNaDaKUfxSoV22rvnw=
 			</data>
 		</dict>
 		<key>Modules/HokoConnectKit.swiftmodule/arm64.swiftdoc</key>
@@ -113,11 +113,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			+oEYBidftZIFzYAMje/5roFEMv4=
+			ORRfZDpu/bQkIn6372ST9pBc/1o=
 			</data>
 			<key>hash2</key>
 			<data>
-			OF2/XWLBU80Myq2rHNPpP6husr5o2KilnmYl6iwrdlw=
+			XJ1SgujiCqpDzUp/MLeQ3wVvyj+kGs0o1SEp8fzD02Q=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
