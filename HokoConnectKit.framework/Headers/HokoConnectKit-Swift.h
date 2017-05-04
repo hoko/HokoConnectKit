@@ -173,6 +173,7 @@ SWIFT_CLASS("_TtC14HokoConnectKit16AffiliateService")
 @end
 
 @class Group;
+@class CampaignImage;
 
 /// The class that represents a given Campaign.
 SWIFT_CLASS("_TtC14HokoConnectKit8Campaign")
@@ -186,6 +187,7 @@ SWIFT_CLASS("_TtC14HokoConnectKit8Campaign")
 /// The campaign images
 @property (nonatomic, readonly, copy) NSString * _Nullable iconURL;
 @property (nonatomic, readonly, copy) NSDictionary<NSString *, NSString *> * _Nonnull images;
+@property (nonatomic, readonly, copy) NSDictionary<NSString *, CampaignImage *> * _Nonnull imagesInfo;
 /// The campaign code
 @property (nonatomic, readonly, copy) NSString * _Nonnull code;
 /// The campaign name or an empty string
@@ -256,6 +258,16 @@ SWIFT_CLASS("_TtC14HokoConnectKit8Campaign")
 @end
 
 
+SWIFT_CLASS("_TtC14HokoConnectKit13CampaignImage")
+@interface CampaignImage : NSObject
+@property (nonatomic, readonly, copy) NSString * _Nonnull uri;
+@property (nonatomic, readonly) NSInteger width;
+@property (nonatomic, readonly) NSInteger height;
+- (nonnull instancetype)initWithUri:(NSString * _Nonnull)uri width:(NSInteger)width height:(NSInteger)height OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
+@end
+
+
 SWIFT_CLASS("_TtC14HokoConnectKit7Content")
 @interface Content : NSObject
 - (nonnull instancetype)initWithId:(NSString * _Nonnull)id text:(NSString * _Nonnull)text type:(NSString * _Nullable)type OBJC_DESIGNATED_INITIALIZER;
@@ -275,6 +287,15 @@ SWIFT_CLASS("_TtC14HokoConnectKit7Context")
 - (NSDictionary<NSString *, id> * _Nullable)asJSON SWIFT_WARN_UNUSED_RESULT;
 @property (nonatomic, readonly, copy) NSString * _Nonnull stringValue;
 - (NSString * _Nonnull)asDeeplink:(NSArray<NSString *> * _Nonnull)deeplinks SWIFT_WARN_UNUSED_RESULT;
+@end
+
+
+SWIFT_CLASS("_TtC14HokoConnectKit11CustomField")
+@interface CustomField : NSObject
+@property (nonatomic, readonly, copy) NSString * _Nonnull name;
+@property (nonatomic, readonly, copy) NSString * _Nonnull type;
+@property (nonatomic, readonly, copy) NSString * _Nonnull value;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
 @end
 
 
