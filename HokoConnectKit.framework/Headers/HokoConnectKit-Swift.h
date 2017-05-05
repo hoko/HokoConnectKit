@@ -138,6 +138,7 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 
 #pragma clang diagnostic ignored "-Wproperty-attribute-mismatch"
 #pragma clang diagnostic ignored "-Wduplicate-method-arg"
+@class ImageInfo;
 
 /// The class that represents the Advertiser from a given Campaign.
 SWIFT_CLASS("_TtC14HokoConnectKit10Advertiser")
@@ -146,8 +147,10 @@ SWIFT_CLASS("_TtC14HokoConnectKit10Advertiser")
 @property (nonatomic, readonly, copy) NSString * _Nonnull code;
 /// The app name
 @property (nonatomic, readonly, copy) NSString * _Nonnull name;
-/// The app details
-@property (nonatomic, readonly, copy) NSDictionary<NSString *, id> * _Nonnull details;
+/// The app extra text fields
+@property (nonatomic, readonly, copy) NSDictionary<NSString *, NSString *> * _Nonnull details;
+/// The app extra images
+@property (nonatomic, readonly, copy) NSDictionary<NSString *, ImageInfo *> * _Nonnull imagesInfo;
 @property (nonatomic, readonly, copy) NSString * _Nullable iconURL;
 /// The app store ID of this advertiser
 @property (nonatomic, readonly) NSInteger appStoreId;
@@ -173,7 +176,6 @@ SWIFT_CLASS("_TtC14HokoConnectKit16AffiliateService")
 @end
 
 @class Group;
-@class CampaignImage;
 
 /// The class that represents a given Campaign.
 SWIFT_CLASS("_TtC14HokoConnectKit8Campaign")
@@ -187,7 +189,7 @@ SWIFT_CLASS("_TtC14HokoConnectKit8Campaign")
 /// The campaign images
 @property (nonatomic, readonly, copy) NSString * _Nullable iconURL;
 @property (nonatomic, readonly, copy) NSDictionary<NSString *, NSString *> * _Nonnull images;
-@property (nonatomic, readonly, copy) NSDictionary<NSString *, CampaignImage *> * _Nonnull imagesInfo;
+@property (nonatomic, readonly, copy) NSDictionary<NSString *, ImageInfo *> * _Nonnull imagesInfo;
 /// The campaign code
 @property (nonatomic, readonly, copy) NSString * _Nonnull code;
 /// The campaign name or an empty string
@@ -255,16 +257,6 @@ SWIFT_CLASS("_TtC14HokoConnectKit8Campaign")
 /// Inform HOKO about an impression. The impression reporting may be delayed to save battery.
 /// Only use if the campaign retrieval did not use <code>addImpressions</code> == true.
 - (void)impress;
-@end
-
-
-SWIFT_CLASS("_TtC14HokoConnectKit13CampaignImage")
-@interface CampaignImage : NSObject
-@property (nonatomic, readonly, copy) NSString * _Nonnull uri;
-@property (nonatomic, readonly) NSInteger width;
-@property (nonatomic, readonly) NSInteger height;
-- (nonnull instancetype)initWithUri:(NSString * _Nonnull)uri width:(NSInteger)width height:(NSInteger)height OBJC_DESIGNATED_INITIALIZER;
-- (nonnull instancetype)init SWIFT_UNAVAILABLE;
 @end
 
 
@@ -361,6 +353,16 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) double impressionsQu
 /// <code>true</code> if the deeplink is from a HOKO partner and was processed by the SDK,
 /// <code>false</code> otherwise.
 - (BOOL)handleAttributionFromIncomingURL:(NSURL * _Nonnull)url SWIFT_WARN_UNUSED_RESULT;
+@end
+
+
+SWIFT_CLASS("_TtC14HokoConnectKit9ImageInfo")
+@interface ImageInfo : NSObject
+@property (nonatomic, readonly, copy) NSString * _Nonnull uri;
+@property (nonatomic, readonly) NSInteger width;
+@property (nonatomic, readonly) NSInteger height;
+- (nonnull instancetype)initWithUri:(NSString * _Nonnull)uri width:(NSInteger)width height:(NSInteger)height OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
 @end
 
 
