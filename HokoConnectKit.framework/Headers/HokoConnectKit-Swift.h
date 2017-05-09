@@ -282,15 +282,6 @@ SWIFT_CLASS("_TtC14HokoConnectKit7Context")
 @end
 
 
-SWIFT_CLASS("_TtC14HokoConnectKit11CustomField")
-@interface CustomField : NSObject
-@property (nonatomic, readonly, copy) NSString * _Nonnull name;
-@property (nonatomic, readonly, copy) NSString * _Nonnull type;
-@property (nonatomic, readonly, copy) NSString * _Nonnull value;
-- (nonnull instancetype)init SWIFT_UNAVAILABLE;
-@end
-
-
 SWIFT_CLASS("_TtC14HokoConnectKit5Group")
 @interface Group : NSObject
 /// The group internal code
