@@ -18,7 +18,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		BCJKW1RyFnMCFgFr5qb8pDW6zf8=
+		zRqWQp1a0I785X9qQPJy6CivC4U=
 		</data>
 		<key>LICENSE</key>
 		<data>
@@ -26,19 +26,19 @@
 		</data>
 		<key>Modules/HokoConnectKit.swiftmodule/arm.swiftdoc</key>
 		<data>
-		LcDvkMOBVHb7HrDfJHqCZRiSeYQ=
+		I3ureHDHdR7So2+Z/L+hhVuaNQ4=
 		</data>
 		<key>Modules/HokoConnectKit.swiftmodule/arm.swiftmodule</key>
 		<data>
-		0xtfNuIcoVko+i8Je6whJY2BLYE=
+		2GTXDh6YgR6TE4D0HEMgA7xGMV8=
 		</data>
 		<key>Modules/HokoConnectKit.swiftmodule/arm64.swiftdoc</key>
 		<data>
-		Nxy3oUlIqqm4pOMYsPotwFAk/Rs=
+		ncsGWCYwqzzCQtfJVHySTvw/xS8=
 		</data>
 		<key>Modules/HokoConnectKit.swiftmodule/arm64.swiftmodule</key>
 		<data>
-		4BQPKx4uQit35MlsXHVuL7hsVVk=
+		CPmqe/X3Q1BIhL2HRzrhlOzxaAQ=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -95,44 +95,44 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			LcDvkMOBVHb7HrDfJHqCZRiSeYQ=
+			I3ureHDHdR7So2+Z/L+hhVuaNQ4=
 			</data>
 			<key>hash2</key>
 			<data>
-			B30ch9o78JHpM6N7XBH5R+cwFiZ8edcQdh40pvb4yqs=
+			KhNmXHtI+NJm6xAp72LVfgOX5V4Gd4T6e26eOnEdToo=
 			</data>
 		</dict>
 		<key>Modules/HokoConnectKit.swiftmodule/arm.swiftmodule</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			0xtfNuIcoVko+i8Je6whJY2BLYE=
+			2GTXDh6YgR6TE4D0HEMgA7xGMV8=
 			</data>
 			<key>hash2</key>
 			<data>
-			NJYI8GysaLzDqnlKe5/AnLXDO+6WiDdGURi35Sjsz7w=
+			CxUKt1RfzJDu/V1NDZ0CvxCGVr+U4fDBY7LyPtaNXPs=
 			</data>
 		</dict>
 		<key>Modules/HokoConnectKit.swiftmodule/arm64.swiftdoc</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			Nxy3oUlIqqm4pOMYsPotwFAk/Rs=
+			ncsGWCYwqzzCQtfJVHySTvw/xS8=
 			</data>
 			<key>hash2</key>
 			<data>
-			EcW2eigr8XUeXlkgtYHor1FQJuXIXHM5kFDbC27ZU/4=
+			6Ms8KlaNsdL+cXdkC1HBbKhZvDWlA99gWinev4TVhmI=
 			</data>
 		</dict>
 		<key>Modules/HokoConnectKit.swiftmodule/arm64.swiftmodule</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			4BQPKx4uQit35MlsXHVuL7hsVVk=
+			CPmqe/X3Q1BIhL2HRzrhlOzxaAQ=
 			</data>
 			<key>hash2</key>
 			<data>
-			mJ1QVvgo4nvPRP0IJxaHcysPVNPy94GntqSSIae9I+8=
+			icH+UKrAm0rfULyVnRyUb2OMFWK6aYYpQfbjUVqNVaY=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
