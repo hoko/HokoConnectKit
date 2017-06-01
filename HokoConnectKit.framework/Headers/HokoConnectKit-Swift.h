@@ -138,6 +138,172 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 
 #pragma clang diagnostic ignored "-Wproperty-attribute-mismatch"
 #pragma clang diagnostic ignored "-Wduplicate-method-arg"
+@class ImageInfo;
+
+/// The class that represents the Advertiser from a given Campaign.
+SWIFT_CLASS("_TtC14HokoConnectKit10Advertiser")
+@interface Advertiser : NSObject
+/// The app code
+@property (nonatomic, readonly, copy) NSString * _Nonnull code;
+/// The app name
+@property (nonatomic, readonly, copy) NSString * _Nonnull name;
+/// The app extra text fields
+@property (nonatomic, readonly, copy) NSDictionary<NSString *, NSString *> * _Nonnull details;
+/// The app extra images
+@property (nonatomic, readonly, copy) NSDictionary<NSString *, ImageInfo *> * _Nonnull imagesInfo;
+@property (nonatomic, readonly, copy) NSString * _Nullable iconURL;
+/// The app store ID of this advertiser
+@property (nonatomic, readonly) NSInteger appStoreId;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
+@end
+
+
+/// The class that represents the service offered by the affiliate.
+SWIFT_CLASS("_TtC14HokoConnectKit16AffiliateService")
+@interface AffiliateService : NSObject
+/// The title of the service
+@property (nonatomic, readonly, copy) NSString * _Nonnull title;
+/// What the service is about
+@property (nonatomic, readonly, copy) NSString * _Nullable shortDescription;
+/// The amount that the service entails
+@property (nonatomic, readonly, copy) NSString * _Nullable value;
+/// Deeplink to the app
+@property (nonatomic, readonly, copy) NSString * _Nonnull link;
+/// Service extra details
+@property (nonatomic, readonly, copy) NSDictionary<NSString *, id> * _Nonnull details;
+- (void)open;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
+@end
+
+@class Group;
+
+/// The class that represents a given Campaign.
+SWIFT_CLASS("_TtC14HokoConnectKit8Campaign")
+@interface Campaign : NSObject
+/// The campaign group
+@property (nonatomic, readonly, strong) Group * _Nullable group;
+/// The campaign extra details
+@property (nonatomic, readonly, copy) NSDictionary<NSString *, NSString *> * _Nonnull details;
+/// The advertiser associated with the campaign
+@property (nonatomic, readonly, strong) Advertiser * _Nullable advertiser;
+/// The campaign images
+@property (nonatomic, readonly, copy) NSString * _Nullable iconURL;
+@property (nonatomic, readonly, copy) NSDictionary<NSString *, NSString *> * _Nonnull images;
+@property (nonatomic, readonly, copy) NSDictionary<NSString *, ImageInfo *> * _Nonnull imagesInfo;
+/// The campaign code
+@property (nonatomic, readonly, copy) NSString * _Nonnull code;
+/// The campaign name or an empty string
+@property (nonatomic, readonly, copy) NSString * _Nonnull name;
+/// Flag that indicates whether the campaign represents a phone number
+@property (nonatomic, readonly) BOOL isPhoneNumber;
+/// Flag that indicates whether the campaign represents a web link
+@property (nonatomic, readonly) BOOL isWeb;
+/// The campaign tags. The tags can be an empty array
+@property (nonatomic, readonly, copy) NSArray<NSString *> * _Nonnull tags;
+/// Flag that indicates whether the campaign is associated to an affiliate
+@property (nonatomic, readonly) BOOL isAffiliateCampaign;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
+@end
+
+
+@interface Campaign (SWIFT_EXTENSION(HokoConnectKit))
+@end
+
+@class UIViewController;
+
+@interface Campaign (SWIFT_EXTENSION(HokoConnectKit))
+/// Method that will process and open the campaign, handling all the deeplinking aspects. If, for
+/// instance, the campaign is holding a web link instead of the deep link, the <code>openWebLinkCallback</code>
+/// block will be called with that url so that it can be opened with the app’s custom in-app browser.
+/// \param onViewController The <code>UIViewController</code> where the AppStore sheet will be
+/// presented (if needed).
+///
+/// \param metadata The metadata that will be sent to the HOKO servers alongside
+/// the “open” notification. Used for analytics.
+///
+/// \param storeWillPresentCallback The callback block that will be called when the App Store
+/// sheet for the campaign’s app is about to be presented.
+///
+/// \param storeWillDismissCallback The callback block that will be called when the App Store
+/// sheet for the campaign’s app is about to be dismissed.
+///
+/// \param appWillOpenCallback The callback block that will be called when the Campaign’s
+/// app deeplink is about to be opened.
+///
+/// \param openWebLinkCallback The callback block that will be called when the Campaign’s
+/// app web link needs to be opened by the developer (with a custom in-app browser, for instance).
+///
+- (void)openOnViewController:(UIViewController * _Nonnull)viewController withMetadata:(NSDictionary<NSString *, NSString *> * _Nullable)metadata noMetricChanges:(BOOL)noMetricChanges storeWillPresentCallback:(void (^ _Nullable)(void))storeWillPresentCallback storeWillDismissCallback:(void (^ _Nullable)(void))storeWillDismissCallback appWillOpenCallback:(void (^ _Nullable)(void))appWillOpenCallback openWebLinkCallback:(void (^ _Nullable)(NSString * _Nonnull))openWebLinkCallback affiliateServicesCallback:(void (^ _Nullable)(NSArray<AffiliateService *> * _Nonnull))affiliateServicesCallback failureCallback:(void (^ _Nullable)(NSString * _Nullable))failureCallback;
+/// Inform HOKO about a stand-alone metric change. Does not open any links or do anything else.
+/// If tap, open and impression are false nothing is done.
+/// Calling with only impression=true is equivalent to invoking method impress.
+/// \param metadata The metadata that will be sent to the HOKO servers alongside
+/// the “open” notification. Used for analytics.
+///
+/// \param tap Whether to increment the number of taps.
+///
+/// \param open Whether to increment the number of opens.
+///
+/// \param impression Whether to increment the number of impressions.
+///
+- (void)reportMetricWithMetadata:(NSDictionary<NSString *, NSString *> * _Nullable)metadata tap:(BOOL)tap open:(BOOL)open impression:(BOOL)impression;
+- (NSString * _Nullable)image_for_sizeWithWidth:(NSInteger)width height:(NSInteger)height SWIFT_WARN_UNUSED_RESULT;
+/// Inform HOKO about an impression. The impression reporting may be delayed to save battery.
+/// Only use if the campaign retrieval did not use <code>addImpressions</code> == true.
+- (void)impress;
+@end
+
+
+SWIFT_CLASS("_TtC14HokoConnectKit7Content")
+@interface Content : NSObject
+- (nonnull instancetype)initWithId:(NSString * _Nonnull)id text:(NSString * _Nonnull)text type:(NSString * _Nullable)type OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
+@end
+
+@class Location;
+
+SWIFT_CLASS("_TtC14HokoConnectKit7Context")
+@interface Context : NSObject
+- (nonnull instancetype)initWithName:(NSString * _Nullable)name location:(Location * _Nullable)location datetime:(NSDate * _Nullable)datetime OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
+@end
+
+
+@interface Context (SWIFT_EXTENSION(HokoConnectKit))
+- (NSDictionary<NSString *, id> * _Nullable)asJSON SWIFT_WARN_UNUSED_RESULT;
+@property (nonatomic, readonly, copy) NSString * _Nonnull stringValue;
+- (NSString * _Nonnull)asDeeplink:(NSArray<NSString *> * _Nonnull)deeplinks SWIFT_WARN_UNUSED_RESULT;
+@end
+
+
+SWIFT_CLASS("_TtC14HokoConnectKit5Group")
+@interface Group : NSObject
+/// The group internal code
+@property (nonatomic, readonly, copy) NSString * _Nonnull code;
+/// The name of the group
+@property (nonatomic, readonly, copy) NSString * _Nonnull name;
+/// The description of the group
+@property (nonatomic, readonly, copy) NSString * _Nullable shortDescription;
+/// The description of the group
+@property (nonatomic, readonly, copy) NSArray<Group *> * _Nonnull subgroups;
+/// Constructs a Group object manually.
+/// \param code a unique code that represents the group
+///
+/// \param name a name that identifies the group
+///
+/// \param shortDescription quick description
+///
+- (nonnull instancetype)initWithCode:(NSString * _Nonnull)code name:(NSString * _Nonnull)name subgroups:(NSArray<Group *> * _Nonnull)subgroups shortDescription:(NSString * _Nonnull)shortDescription OBJC_DESIGNATED_INITIALIZER;
+/// Get the campaigns that belongs to this group.
+/// \param completionCallback Callback called when the request is completed and that holds the
+/// Campaigns array.
+///
+/// \param failureCallback Callback called when the request has ended with an error.
+///
+- (void)getCampaigns:(void (^ _Nonnull)(NSArray<Campaign *> * _Nonnull))completion failure:(void (^ _Nullable)(NSString * _Nullable))failure;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
+@end
+
 @class NSMutableArray;
 
 SWIFT_CLASS("_TtC14HokoConnectKit14HokoConnectKit")
@@ -151,6 +317,10 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) NSMutableArr
 + (NSMutableArray * _Nonnull)impressionsQueue SWIFT_WARN_UNUSED_RESULT;
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) double impressionsQueueTimeout;)
 + (double)impressionsQueueTimeout SWIFT_WARN_UNUSED_RESULT;
+@property (nonatomic) BOOL isAllowedToAccessUserLocation;
+@property (nonatomic) BOOL alwaysOnLocationDiscovery;
+@property (nonatomic) BOOL discoverLocationBeforeRequests;
+- (void)clearLastLocation;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 /// Performs the SDK setup with the respective token.
 /// \param token The <code>String</code> that identifies your app.
@@ -168,10 +338,29 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) double impressionsQu
 /// <code>true</code> if the deeplink is from a HOKO partner and was processed by the SDK,
 /// <code>false</code> otherwise.
 - (BOOL)handleAttributionFromIncomingURL:(NSURL * _Nonnull)url SWIFT_WARN_UNUSED_RESULT;
-/// Sets the user demographic information to enrich campaigns targeting mechanisms.
-/// \param id Sets an internal and unique identifier to the user
-///
-- (void)setUser:(NSString * _Nonnull)id;
+@end
+
+
+SWIFT_CLASS("_TtC14HokoConnectKit9ImageInfo")
+@interface ImageInfo : NSObject
+@property (nonatomic, readonly, copy) NSString * _Nonnull uri;
+@property (nonatomic, readonly) NSInteger width;
+@property (nonatomic, readonly) NSInteger height;
+- (nonnull instancetype)initWithUri:(NSString * _Nonnull)uri width:(NSInteger)width height:(NSInteger)height OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
+@end
+
+
+SWIFT_CLASS("_TtC14HokoConnectKit8Location")
+@interface Location : NSObject
+@property (nonatomic, copy) NSString * _Nullable lat;
+@property (nonatomic, copy) NSString * _Nullable lon;
+@property (nonatomic, copy) NSString * _Nullable address;
+@property (nonatomic, copy) NSString * _Nullable countryCode;
+@property (nonatomic, copy) NSString * _Nullable city;
+@property (nonatomic, copy) NSString * _Nullable postalCode;
+- (nonnull instancetype)initWithLatitude:(NSString * _Nullable)latitude longitude:(NSString * _Nullable)longitude address:(NSString * _Nullable)address countryCode:(NSString * _Nullable)countryCode city:(NSString * _Nullable)city postalCode:(NSString * _Nullable)postalCode OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
 @end
 
 
@@ -304,53 +493,6 @@ SWIFT_CLASS("_TtC14HokoConnectKit15SessionDelegate")
 @end
 
 
-@interface SessionDelegate (SWIFT_EXTENSION(HokoConnectKit)) <NSURLSessionDataDelegate>
-/// Tells the delegate that the data task received the initial reply (headers) from the server.
-/// \param session The session containing the data task that received an initial reply.
-///
-/// \param dataTask The data task that received an initial reply.
-///
-/// \param response A URL response object populated with headers.
-///
-/// \param completionHandler A completion handler that your code calls to continue the transfer, passing a
-/// constant to indicate whether the transfer should continue as a data task or
-/// should become a download task.
-///
-- (void)URLSession:(NSURLSession * _Nonnull)session dataTask:(NSURLSessionDataTask * _Nonnull)dataTask didReceiveResponse:(NSURLResponse * _Nonnull)response completionHandler:(void (^ _Nonnull)(NSURLSessionResponseDisposition))completionHandler;
-/// Tells the delegate that the data task was changed to a download task.
-/// \param session The session containing the task that was replaced by a download task.
-///
-/// \param dataTask The data task that was replaced by a download task.
-///
-/// \param downloadTask The new download task that replaced the data task.
-///
-- (void)URLSession:(NSURLSession * _Nonnull)session dataTask:(NSURLSessionDataTask * _Nonnull)dataTask didBecomeDownloadTask:(NSURLSessionDownloadTask * _Nonnull)downloadTask;
-/// Tells the delegate that the data task has received some of the expected data.
-/// \param session The session containing the data task that provided data.
-///
-/// \param dataTask The data task that provided data.
-///
-/// \param data A data object containing the transferred data.
-///
-- (void)URLSession:(NSURLSession * _Nonnull)session dataTask:(NSURLSessionDataTask * _Nonnull)dataTask didReceiveData:(NSData * _Nonnull)data;
-/// Asks the delegate whether the data (or upload) task should store the response in the cache.
-/// \param session The session containing the data (or upload) task.
-///
-/// \param dataTask The data (or upload) task.
-///
-/// \param proposedResponse The default caching behavior. This behavior is determined based on the current
-/// caching policy and the values of certain received headers, such as the Pragma
-/// and Cache-Control headers.
-///
-/// \param completionHandler A block that your handler must call, providing either the original proposed
-/// response, a modified version of that response, or NULL to prevent caching the
-/// response. If your delegate implements this method, it must call this completion
-/// handler; otherwise, your app leaks memory.
-///
-- (void)URLSession:(NSURLSession * _Nonnull)session dataTask:(NSURLSessionDataTask * _Nonnull)dataTask willCacheResponse:(NSCachedURLResponse * _Nonnull)proposedResponse completionHandler:(void (^ _Nonnull)(NSCachedURLResponse * _Nullable))completionHandler;
-@end
-
-
 @interface SessionDelegate (SWIFT_EXTENSION(HokoConnectKit)) <NSURLSessionDelegate>
 /// Tells the delegate that the session has been invalidated.
 /// \param session The session object that was invalidated.
@@ -404,6 +546,53 @@ SWIFT_CLASS("_TtC14HokoConnectKit15SessionDelegate")
 /// \param outputStream The new output stream.
 ///
 - (void)URLSession:(NSURLSession * _Nonnull)session streamTask:(NSURLSessionStreamTask * _Nonnull)streamTask didBecomeInputStream:(NSInputStream * _Nonnull)inputStream outputStream:(NSOutputStream * _Nonnull)outputStream;
+@end
+
+
+@interface SessionDelegate (SWIFT_EXTENSION(HokoConnectKit)) <NSURLSessionDataDelegate>
+/// Tells the delegate that the data task received the initial reply (headers) from the server.
+/// \param session The session containing the data task that received an initial reply.
+///
+/// \param dataTask The data task that received an initial reply.
+///
+/// \param response A URL response object populated with headers.
+///
+/// \param completionHandler A completion handler that your code calls to continue the transfer, passing a
+/// constant to indicate whether the transfer should continue as a data task or
+/// should become a download task.
+///
+- (void)URLSession:(NSURLSession * _Nonnull)session dataTask:(NSURLSessionDataTask * _Nonnull)dataTask didReceiveResponse:(NSURLResponse * _Nonnull)response completionHandler:(void (^ _Nonnull)(NSURLSessionResponseDisposition))completionHandler;
+/// Tells the delegate that the data task was changed to a download task.
+/// \param session The session containing the task that was replaced by a download task.
+///
+/// \param dataTask The data task that was replaced by a download task.
+///
+/// \param downloadTask The new download task that replaced the data task.
+///
+- (void)URLSession:(NSURLSession * _Nonnull)session dataTask:(NSURLSessionDataTask * _Nonnull)dataTask didBecomeDownloadTask:(NSURLSessionDownloadTask * _Nonnull)downloadTask;
+/// Tells the delegate that the data task has received some of the expected data.
+/// \param session The session containing the data task that provided data.
+///
+/// \param dataTask The data task that provided data.
+///
+/// \param data A data object containing the transferred data.
+///
+- (void)URLSession:(NSURLSession * _Nonnull)session dataTask:(NSURLSessionDataTask * _Nonnull)dataTask didReceiveData:(NSData * _Nonnull)data;
+/// Asks the delegate whether the data (or upload) task should store the response in the cache.
+/// \param session The session containing the data (or upload) task.
+///
+/// \param dataTask The data (or upload) task.
+///
+/// \param proposedResponse The default caching behavior. This behavior is determined based on the current
+/// caching policy and the values of certain received headers, such as the Pragma
+/// and Cache-Control headers.
+///
+/// \param completionHandler A block that your handler must call, providing either the original proposed
+/// response, a modified version of that response, or NULL to prevent caching the
+/// response. If your delegate implements this method, it must call this completion
+/// handler; otherwise, your app leaks memory.
+///
+- (void)URLSession:(NSURLSession * _Nonnull)session dataTask:(NSURLSessionDataTask * _Nonnull)dataTask willCacheResponse:(NSCachedURLResponse * _Nonnull)proposedResponse completionHandler:(void (^ _Nonnull)(NSCachedURLResponse * _Nullable))completionHandler;
 @end
 
 @class NSURLSessionTaskMetrics;
