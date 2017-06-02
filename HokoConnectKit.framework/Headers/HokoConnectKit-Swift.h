@@ -271,6 +271,7 @@ SWIFT_CLASS("_TtC14HokoConnectKit7Context")
 
 @interface Context (SWIFT_EXTENSION(HokoConnectKit))
 - (NSDictionary<NSString *, id> * _Nullable)asJSON SWIFT_WARN_UNUSED_RESULT;
+- (NSDictionary<NSString *, id> * _Nullable)userAsJSON SWIFT_WARN_UNUSED_RESULT;
 @property (nonatomic, readonly, copy) NSString * _Nonnull stringValue;
 - (NSString * _Nonnull)asDeeplink:(NSArray<NSString *> * _Nonnull)deeplinks SWIFT_WARN_UNUSED_RESULT;
 @end
