@@ -234,6 +234,7 @@ SWIFT_CLASS("_TtC14HokoConnectKit8Campaign")
 /// app web link needs to be opened by the developer (with a custom in-app browser, for instance).
 ///
 - (void)openOnViewController:(UIViewController * _Nonnull)viewController withMetadata:(NSDictionary<NSString *, NSString *> * _Nullable)metadata noMetricChanges:(BOOL)noMetricChanges storeWillPresentCallback:(void (^ _Nullable)(void))storeWillPresentCallback storeWillDismissCallback:(void (^ _Nullable)(void))storeWillDismissCallback appWillOpenCallback:(void (^ _Nullable)(void))appWillOpenCallback openWebLinkCallback:(void (^ _Nullable)(NSString * _Nonnull))openWebLinkCallback affiliateServicesCallback:(void (^ _Nullable)(NSArray<AffiliateService *> * _Nonnull))affiliateServicesCallback failureCallback:(void (^ _Nullable)(NSString * _Nullable))failureCallback;
+- (NSString * _Nullable)image_for_sizeWithWidth:(NSInteger)width height:(NSInteger)height SWIFT_WARN_UNUSED_RESULT;
 /// Inform HOKO about a stand-alone metric change. Does not open any links or do anything else.
 /// If tap, open and impression are false nothing is done.
 /// Calling with only impression=true is equivalent to invoking method impress.
@@ -247,7 +248,6 @@ SWIFT_CLASS("_TtC14HokoConnectKit8Campaign")
 /// \param impression Whether to increment the number of impressions.
 ///
 - (void)reportMetricWithMetadata:(NSDictionary<NSString *, NSString *> * _Nullable)metadata tap:(BOOL)tap open:(BOOL)open impression:(BOOL)impression;
-- (NSString * _Nullable)image_for_sizeWithWidth:(NSInteger)width height:(NSInteger)height SWIFT_WARN_UNUSED_RESULT;
 /// Inform HOKO about an impression. The impression reporting may be delayed to save battery.
 /// Only use if the campaign retrieval did not use <code>addImpressions</code> == true.
 - (void)impress;
