@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name = 'HokoConnectKit'
-  s.version = '3.0.29'
+  s.version = '3.0.30'
   s.license = 'MIT'
   s.summary = 'Hoko Connect Kit'
   s.description = 'Hoko Connect Kit iOS SDK. Changing the way apps connect.'
