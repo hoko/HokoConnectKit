@@ -314,10 +314,10 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) HokoConnectK
 + (HokoConnectKit * _Nonnull)shared SWIFT_WARN_UNUSED_RESULT;
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nonnull sdkVersion;)
 + (NSString * _Nonnull)sdkVersion SWIFT_WARN_UNUSED_RESULT;
-SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) NSMutableArray * _Nonnull impressionsQueue;)
-+ (NSMutableArray * _Nonnull)impressionsQueue SWIFT_WARN_UNUSED_RESULT;
-SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) double impressionsQueueTimeout;)
-+ (double)impressionsQueueTimeout SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) NSMutableArray * _Nonnull metricsQueue;)
++ (NSMutableArray * _Nonnull)metricsQueue SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) double metricsQueueTimeout;)
++ (double)metricsQueueTimeout SWIFT_WARN_UNUSED_RESULT;
 @property (nonatomic) BOOL isAllowedToAccessUserLocation;
 @property (nonatomic) BOOL alwaysOnLocationDiscovery;
 @property (nonatomic) BOOL discoverLocationBeforeRequests;
