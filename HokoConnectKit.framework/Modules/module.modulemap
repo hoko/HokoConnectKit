@@ -7,4 +7,5 @@ framework module HokoConnectKit {
 
 module HokoConnectKit.Swift {
     header "HokoConnectKit-Swift.h"
+    requires objc
 }
